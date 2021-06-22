@@ -64,14 +64,20 @@ def checkInt(char):
     """A number passed is a number used"""
     return "%d is a number" % char
 
+
 @app.route('/number_template/<int:char>', strict_slashes=False)
 def checkIntTemplate(char):
     """Show char if char is a number"""
     return render_template('5-number.html', value=char)
 
+
 @app.route('/number_odd_or_even/<int:womp>', strict_slashes=False)
-def modulo2(char):
+def modulo2(womp):
     """Define whether is odd or squad"""
+    if womp % 2 == 0:
+        womp = str(womp) + " is even"
+    else:
+        womp = str(womp) + " is odd"
     return render_template('6-number_odd_or_even.html', value=womp)
 
 if __name__ == "__main__":

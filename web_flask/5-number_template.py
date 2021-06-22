@@ -63,6 +63,7 @@ def checkInt(char):
     """A number passed is a number used"""
     return "%d is a number" % char
 
+
 @app.route('/number_template/<int:char>', strict_slashes=False)
 def checkIntTemplate(char):
     """Show char if char is a number"""
